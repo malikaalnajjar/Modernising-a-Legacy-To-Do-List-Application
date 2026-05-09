@@ -1,4 +1,4 @@
-# SE 420 Software Maintenance & Evolution — Modernising a Legacy To-Do List Application Project
+# SE420 Software Maintenance & Evolution — Modernising a Legacy To-Do List Application Project
 
 A two-version CLI to-do list application built for SE 420 Software Maintenance
 & Evolution. The project demonstrates software re-engineering by contrasting a
