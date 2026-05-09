@@ -1,4 +1,4 @@
-# SE420 Software Maintenance & Evolution — Modernising a Legacy To-Do List Application Project
+# SE420 Software Maintenance & Evolution: Modernising a Legacy To-Do List Application
 
 A two-version CLI to-do list application built for SE 420 Software Maintenance
 & Evolution. The project demonstrates software re-engineering by contrasting a
@@ -16,14 +16,14 @@ The full project report is available at [docs/SE420_Project_Report_.pdf](docs/SE
 
 ## Project structure
 
-```
+```text
 se420-todo-project/
 ├── legacy/
-│   └── todo_legacy.py        # bad version — exhibits Fowler code smells
+│   └── todo_legacy.py        # bad version - exhibits Fowler code smells
 ├── refactored/
 │   ├── task.py               # Task dataclass + Literal type aliases
-│   ├── task_manager.py       # TaskManager — all business logic
-│   └── main.py               # thin CLI — I/O only
+│   ├── task_manager.py       # TaskManager - all business logic
+│   └── main.py               # thin CLI - I/O only
 ├── tests/
 │   └── test_task_manager.py  # pytest suite (8 tests)
 └── docs/
@@ -57,23 +57,23 @@ All tests should report green with no warnings.
 
 The refactored version applies four named refactorings in sequence:
 
-1. **Remove Duplication** — The legacy `add_task()` and `add_urgent_task()`
+1. **Remove Duplication** - The legacy `add_task()` and `add_urgent_task()`
    functions were nearly identical. They are replaced by a single
    `TaskManager.add_task(description, priority)` method that accepts a
    `priority` parameter, eliminating the duplicated dict-building and
    list-appending code.
 
-2. **Extract Method** — The legacy `do_everything()` function handled every
+2. **Extract Method** - The legacy `do_everything()` function handled every
    operation inline inside one 50-line loop. Each operation is now its own
    method on `TaskManager` (`add_task`, `delete_task`, `complete_task`,
    `list_tasks`). `main.py` only reads input and prints output.
 
-3. **Rename Variables** — Cryptic single-letter names (`c`, `d`, `i`, `x`,
+3. **Rename Variables** - Cryptic single-letter names (`c`, `d`, `i`, `x`,
    `t`) are replaced throughout with self-documenting names: `choice`,
    `description`, `task_id`, `task`. This makes every line of the refactored
    code readable without comments.
 
-4. **Simplify Long Method** — `delete_task` and `complete_task` previously
+4. **Simplify Long Method** - `delete_task` and `complete_task` previously
    duplicated a linear search over the task list. A private helper
    `_find(task_id)` centralises that search and raises `ValueError` when the
    id is absent, keeping both public methods to exactly two lines each.
