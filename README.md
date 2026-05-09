@@ -4,6 +4,12 @@ A two-version CLI to-do list application built for SE 420 Software Maintenance
 & Evolution. The project demonstrates software re-engineering by contrasting a
 deliberately-bad legacy implementation with a cleanly-refactored modern one.
 
+## Course
+
+**SE 420 Software Maintenance & Evolution**
+University of Business and Technology (UBT), Saudi Arabia
+Instructor: Dr. Ahmed Saeed
+
 ## Project Report
 
 The full project report is available at [docs/SE420_Project_Report_.pdf](docs/SE420_Project_Report_.pdf).
